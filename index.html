@@ -1,25 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <!-- 
+      BASIC METADATA: Character set and viewport for mobile responsiveness. 
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Business, LLC – Coming Soon</title>
+
+    <!-- 
+      SEO - CUTTING-EDGE PART 1: Title and Description.
+      This is what users see in Google search results. Make it compelling.
+    -->
+    <title>LASKR CONSULTING LLC | AI Strategy & Custom Tech Solutions</title>
+    <meta name="description" content="LASKR Consulting helps businesses leverage AI and cutting-edge technology. We specialize in strategy, custom model development, and data pipeline optimization.">
+
+    <!-- 
+      AESTHETICS - OLD-SCHOOL PART: Simple CSS for a clean, text-based, "terminal" feel.
+      All contained in the HTML file for simplicity.
+    -->
     <style>
       body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 5% 10%;
-        color: #333;
+        font-family: 'Courier New', Courier, monospace;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        background-color: #fdfdfd;
+        color: #1a1a1a;
       }
-      h1 { margin-bottom: 0.5em; }
-      p { margin: 0.5em 0; }
+      h1, h2, h3 {
+        line-height: 1.2;
+        color: #000;
+      }
+      a {
+        color: #0056b3;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 40px 0;
+      }
+      header, footer {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      footer {
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #555;
+      }
+      .contact-form {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .contact-form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        font-family: inherit;
+        border: 1px solid #ccc;
+      }
+      .contact-form button {
+        padding: 10px 15px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
     </style>
-  </head>
-  <body>
-    <h1>LASKR CONSULTING LLC</h1>
-    <p>4515 N VALERIE PL<br />Phoenix, AZ 85013</p>
-    <p><em>We’re building our site now.</em></p>
-    <p>For inquiries, email <a href="mailto:info@mybusiness.com">info@laskrconsulting.com</a><br />
-       or call (480) 277-7603</p>
-  </body>
+
+    <!-- 
+      SEO - CUTTING-EDGE PART 2: JSON-LD Structured Data.
+      This is a "secret weapon" that describes your business directly to Google.
+      It helps with Knowledge Panel results and establishes authority.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LASKR CONSULTING LLC",
+      "url": "https://[your-github-username].github.io/",
+      "logo": "https://[your-github-username].github.io/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-480-277-7603",
+        "contactType": "customer service"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4515 N VALERIE PL",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "postalCode": "85013",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/your-company-profile"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- SEMANTIC HTML: <header> for top-level information -->
+    <header>
+        <h1>LASKR CONSULTING LLC</h1>
+        <p>Pragmatic AI Strategy & Technology Implementation</p>
+    </header>
+
+    <!-- SEMANTIC HTML: <main> for the primary, unique content of the page -->
+    <main>
+
+        <!-- SEMANTIC HTML: <section> to group related content -->
+        <section id="philosophy">
+            <h2>Our Philosophy</h2>
+            <p>
+                In an industry saturated with hype, we focus on what works. Our approach is rooted in first principles, robust engineering, and measurable business outcomes. We believe the most powerful solutions are often the simplest.
+            </p>
+            <p>
+                This website is a reflection of that belief. It's built with clean, semantic HTML. It's fast, accessible, and does exactly what it needs to do. We build technology for our clients with the same no-nonsense clarity.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li><strong>AI Readiness & Strategy:</strong> We assess your data, infrastructure, and goals to create a clear, actionable AI roadmap.</li>
+                <li><strong>Custom Model Development:</strong> From natural language processing (NLP) to predictive analytics, we build bespoke models tailored to your unique data and challenges.</li>
+                <li><strong>Data Pipeline & MLOps:</strong> We design and implement robust, scalable systems to deploy, monitor, and maintain machine learning models in production.</li>
+                <li><strong>Technical Due Diligence:</strong> Providing investors and acquirers with clear, unbiased assessments of technology stacks and AI claims.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>
+                We're ready to discuss your project. For initial inquiries, you can reach us directly or use the form below.
+            </p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:info@laskrconsulting.com">info@laskrconsulting.com</a><br>
+                <strong>Phone:</strong> (480) 277-7603
+            </p>
+
+            <!-- 
+                THE FORM: Placeholder using Formspree (a free service).
+                1. Go to formspree.io and create a new form.
+                2. They will give you a URL. Replace the placeholder URL below with yours.
+            -->
+            <div class="contact-form">
+                <h3>Contact Form</h3>
+                <form action="https://formspree.io/f/YOUR_UNIQUE_FORM_ID" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SEMANTIC HTML: <footer> for copyright and final info -->
+    <footer>
+        <p>© 2024 LASKR CONSULTING LLC. All rights reserved.</p>
+        <p>4515 N VALERIE PL, Phoenix, AZ 85013</p>
+    </footer>
+
+</body>
 </html>
