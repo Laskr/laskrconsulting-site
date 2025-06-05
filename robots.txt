@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Provide the location of the sitemap.
-Sitemap: https://laskr.github.io/sitemap.xml
+Sitemap: https://www.laskrconsulting.com/sitemap.xml
