@@ -1,191 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 
-      BASIC METADATA: Character set and viewport for mobile responsiveness. 
-    -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laskr Consulting LLC: Strategic Prospecting Intelligence</title>
 
-    <!-- 
-      SEO - CUTTING-EDGE PART 1: Title and Description.
-      This is what users see in Google search results. Make it compelling.
-    -->
-    <title>LASKR CONSULTING LLC | AI Strategy & Custom Tech Solutions</title>
-    <meta name="description" content="LASKR Consulting helps businesses leverage AI and cutting-edge technology. We specialize in strategy, custom model development, and data pipeline optimization.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- 
-      AESTHETICS - OLD-SCHOOL PART: Simple CSS for a clean, text-based, "terminal" feel.
-      All contained in the HTML file for simplicity.
-    -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <style>
-      body {
-        font-family: 'Courier New', Courier, monospace;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-        background-color: #fdfdfd;
-        color: #1a1a1a;
-      }
-      h1, h2, h3 {
-        line-height: 1.2;
-        color: #000;
-      }
-      a {
-        color: #0056b3;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      hr {
-        border: 0;
-        border-top: 1px solid #ccc;
-        margin: 40px 0;
-      }
-      header, footer {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-      footer {
-        margin-top: 40px;
-        font-size: 0.9em;
-        color: #555;
-      }
-      .contact-form {
-        border: 1px solid #ccc;
-        padding: 20px;
-        margin-top: 20px;
-      }
-      .contact-form label {
-        display: block;
-        margin-bottom: 5px;
-      }
-      .contact-form input, .contact-form textarea {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        font-family: inherit;
-        border: 1px solid #ccc;
-      }
-      .contact-form button {
-        padding: 10px 15px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
-      }
+        :root {
+            --bs-dark-rgb: 43, 48, 53; /* A slightly softer dark */
+            --bs-primary: #00A99D; /* A vibrant teal for actions */
+            --bs-primary-rgb: 0, 169, 157;
+            --bs-light-gray: #f8f9fa;
+            --bs-dark-gray: #343a40;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a;
+            color: var(--bs-light-gray);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+
+        .navbar {
+            background-color: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-darker {
+            background-color: #212529;
+        }
+
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+        }
+
+        .hero .lead {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .btn-primary {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #007d74;
+            border-color: #007d74;
+            transform: translateY(-2px);
+        }
+        
+        .briefing-mockup {
+            border: 1px solid #444;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 100%;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .feature-list .icon {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            color: var(--bs-primary);
+        }
+
+        .how-it-works-icon {
+            width: 60px;
+            height: 60px;
+            color: var(--bs-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-card {
+            background-color: #2c3136;
+            border: 1px solid var(--bs-primary);
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 40px rgba(0, 169, 157, 0.2);
+        }
+        
+        .pricing-card .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--bs-primary);
+        }
+        
+        footer {
+            background-color: #212529;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
     </style>
-
-    <!-- 
-      SEO - CUTTING-EDGE PART 2: JSON-LD Structured Data.
-      This is a "secret weapon" that describes your business directly to Google.
-      It helps with Knowledge Panel results and establishes authority.
-    -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "LASKR CONSULTING LLC",
-      "url": "https://www.laskrconsulting.com/",
-      "logo": "https://www.laskrconsulting.com/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-480-277-7603",
-        "contactType": "customer service"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "4515 N VALERIE PL",
-        "addressLocality": "Phoenix",
-        "addressRegion": "AZ",
-        "postalCode": "85013",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/your-company-profile"
-      ]
-    }
-    </script>
 </head>
-
 <body>
 
-    <!-- SEMANTIC HTML: <header> for top-level information -->
-    <header>
-        <h1>LASKR CONSULTING LLC</h1>
-        <p>Pragmatic AI Strategy & Technology Implementation</p>
-    </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Laskr Consulting LLC</a>
+            <a href="#contact" class="btn btn-outline-primary d-none d-lg-inline-block">Request a Sample</a>
+        </div>
+    </nav>
 
-    <!-- SEMANTIC HTML: <main> for the primary, unique content of the page -->
-    <main>
-
-        <!-- SEMANTIC HTML: <section> to group related content -->
-        <section id="philosophy">
-            <h2>Our Philosophy</h2>
-            <p>
-                In an industry saturated with hype, we focus on what works. Our approach is rooted in first principles, robust engineering, and measurable business outcomes. We believe the most powerful solutions are often the simplest.
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1 class="display-3 mb-4">Stop Cold Calling. Start Solving.</h1>
+            <p class="lead mb-5">
+                We identify companies with urgent technical needs and deliver a complete sales-ready briefing. We give your team the perfect reason to start a conversation.
             </p>
-            <p>
-                This website is a reflection of that belief. It's built with clean, semantic HTML. It's fast, accessible, and does exactly what it needs to do. We build technology for our clients with the same no-nonsense clarity.
-            </p>
-        </section>
+            <a href="#sample" class="btn btn-primary btn-lg">See a Sample Briefing</a>
+        </div>
+    </section>
 
-        <hr>
-
-        <section id="services">
-            <h2>Services</h2>
-            <ul>
-                <li><strong>AI Readiness & Strategy:</strong> We assess your data, infrastructure, and goals to create a clear, actionable AI roadmap.</li>
-                <li><strong>Custom Model Development:</strong> From natural language processing (NLP) to predictive analytics, we build bespoke models tailored to your unique data and challenges.</li>
-                <li><strong>Data Pipeline & MLOps:</strong> We design and implement robust, scalable systems to deploy, monitor, and maintain machine learning models in production.</li>
-                <li><strong>Technical Due Diligence:</strong> Providing investors and acquirers with clear, unbiased assessments of technology stacks and AI claims.</li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>
-                We're ready to discuss your project. For initial inquiries, you can reach us directly or use the form below.
-            </p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:info@laskrconsulting.com">info@laskrconsulting.com</a><br>
-                <strong>Phone:</strong> (480) 277-7603
-            </p>
-
-            <!-- 
-                THE FORM: Placeholder using Formspree (a free service).
-                1. Go to formspree.io and create a new form.
-                2. They will give you a URL. Replace the placeholder URL below with yours.
-            -->
-            <div class="contact-form">
-                <h3>Contact Form</h3>
-                <form action="https://formspree.io/f/xeoknbkd" method="POST">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit">Send Message</button>
-                </form>
+    <!-- 2. The Problem Section -->
+    <section id="problem" class="section section-darker">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Your Sales Team is Wasting 80% of its Time.</h2>
+                    <p class="fs-5 text-secondary">
+                        Your reps are burning out, chasing leads with no budget, no urgency, and no reason to talk. Every hour they spend researching dead-ends and crafting generic emails is an hour they aren't closing deals. A huge addressable market means nothing if your pipeline is dry.
+                    </p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- 3. The Solution Section -->
+    <section id="solution" class="section">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">We Deliver the "Why Now".</h2>
+                    <p class="fs-5 text-light">
+                        Laskr's Strategic Prospecting Intelligence platform continuously scans the market for verifiable buying signals—like critical DNS misconfigurations or recent job postings for technologies you support. We transform these signals into high-value "Actionable Briefings" that give your team a compelling, value-driven reason to engage with key decision-makers at the exact moment they are most likely to need you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- SEMANTIC HTML: <footer> for copyright and final info -->
+    <!-- 4. What You Get Section -->
+    <section id="sample" class="section section-darker">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">The Actionable Briefing: More Than Just a Lead.</h2>
+                    <ul class="feature-list">
+                        <li>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                            <div><strong>The Actionable Signal:</strong> The specific, verifiable technical issue (e.g., "Missing DMARC Policy") and the business risk it represents.</div>
+                        </li>
+                        <li>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962A3 3 0 0115 9.75a3 3 0 01-4.5 2.548m-2.223 2.223A3 3 0 015.25 9.75a3 3 0 014.5-2.548m-2.223 2.223A3 3 0 005.25 9.75a3 3 0 004.5 2.548m0 0a3 3 0 01-4.5-2.548m0 0a3 3 0 014.5 2.548M15 9.75a3 3 0 01-4.5 2.548m0 0a3 3 0 014.5 2.548m0 0a3 3 0 01-4.5-2.548M10.5 1.5a.75.75 0 00-1.5 0v3a.75.75 0 001.5 0v-3z" /></svg>
+                            <div><strong>The Buying Committee:</strong> Multiple, verified contacts including the Technical Owner (e.g., IT Director) and the Economic Buyer (e.g., CEO).</div>
+                        </li>
+                        <li>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 12l4.179 2.25m0 0l5.571 3 5.571-3m0 0l4.179-2.25L12 9.75l-5.571-3z" /></svg>
+                            <div><strong>Contextual Intelligence:</strong> The company's tech stack, industry, and size for a tailored conversation.</div>
+                        </li>
+                        <li>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527c.46-.328 1.04-.186 1.318.272l.715.954c.277.458.135 1.04-.272 1.318l-.527.737c-.25.35-.272.806-.108 1.204.165.397.505.71.93.78l.894.149c.542.09.94.56.94 1.11v1.093c0 .55-.398 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.93.78-.164.398-.142.854.108 1.204l.527.738c.407.477.265 1.06-.272 1.318l-.715.954c-.278.458-.858.6-1.318.272l-.738-.527c-.35-.25-.806-.272-1.204-.108-.397.165-.71.505-.78.93l-.149.894c-.09.542-.56.94-1.11.94h-1.093c-.55 0-1.02-.398-1.11-.94l-.149-.894c-.07-.424-.384-.764-.78-.93-.398-.164-.855-.142-1.205.108l-.737.527c-.46.328-1.04.186-1.318-.272l-.715-.954c-.277-.458-.135-1.04.272-1.318l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.149c-.542-.09-.94-.56-.94-1.11v-1.093c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.764-.383.93-.78.164-.398.142-.854-.108-1.204l-.527-.738c-.407-.477-.265-1.06.272-1.318l.715-.954c.278-.458.858-.6-1.318-.272l.738.527c.35.25.806.272 1.204.108.397-.165.71-.505.78-.93l.149-.894zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" /></svg>
+                            <div><strong>The Recommended Sales Angle:</strong> A dynamic, AI-powered strategy on how to approach each contact based on their role and the signal.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://placehold.co/600x750/2c3136/f8f9fa?text=Your+Actionable+Briefing\n+Mockup+Here" alt="Actionable Briefing Mockup" class="briefing-mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. How It Works Section -->
+    <section id="how" class="section">
+        <div class="container text-center">
+            <h2 class="mb-5">How It Works</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <svg class="how-it-works-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                    <h3>1. Signal Detection</h3>
+                    <p class="text-secondary">Our platform scans the market to identify companies exhibiting specific, verifiable technical needs.</p>
+                </div>
+                <div class="col-md-4">
+                    <svg class="how-it-works-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
+                    <h3>2. Intelligence Enrichment</h3>
+                    <p class="text-secondary">We map the organization, identify the complete buying committee, and enrich their contact data.</p>
+                </div>
+                <div class="col-md-4">
+                    <svg class="how-it-works-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                    <h3>3. Briefing Delivery</h3>
+                    <p class="text-secondary">You receive a complete, sales-ready "Actionable Briefing" directly in your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Who It's For Section -->
+    <section id="who" class="section section-darker">
+        <div class="container text-center">
+             <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Built for High-Growth B2B Tech Teams.</h2>
+                    <p class="fs-5 text-secondary">
+                        Our intelligence is most effective for sales teams at innovative Managed Service Providers (MSPs), cutting-edge Cybersecurity firms, and specialized B2B SaaS companies who need to break through the noise and start meaningful conversations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 7. Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Simple, Predictable Pipeline Growth.</h2>
+            </div>
+            <div class="pricing-card text-center">
+                <h3 class="mb-3">The Signal Intelligence Plan</h3>
+                <div class="price mb-2">$5,000<span class="fs-5 text-secondary"> / month</span></div>
+                <p class="fs-4">50 Actionable Briefings Delivered</p>
+                <p class="text-secondary">That's $100 per complete strategic briefing. Less than half the cost of a junior SDR, with 10x the intelligence.</p>
+                 <a href="#contact" class="btn btn-primary btn-lg mt-3">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Final CTA & Contact Form -->
+    <section id="contact" class="section section-darker">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Ready to Transform Your Pipeline?</h2>
+                    <p class="lead text-secondary mb-5">See a real example of an Actionable Briefing and discover how our intelligence can fuel your growth. Fill out the form below to request a sample.</p>
+                    
+                    <form action="https://formspree.io/f/YOUR_FORM_ENDPOINT" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" name="name" class="form-control form-control-lg bg-dark text-white border-secondary" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" name="email" class="form-control form-control-lg bg-dark text-white border-secondary" placeholder="Your Work Email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control form-control-lg bg-dark text-white border-secondary" rows="4" placeholder="Tell us about your sales goals..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Request a Sample Briefing</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2024 LASKR CONSULTING LLC. All rights reserved.</p>
-        <p>4515 N VALERIE PL, Phoenix, AZ 85013</p>
+        <div class="container">
+            <p>&copy; 2025 Laskr Consulting LLC. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
